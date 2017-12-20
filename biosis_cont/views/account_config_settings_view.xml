@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="biosis_cont_account_config_settings_form"  model="ir.ui.view">
+            <field name="inherit_id" ref="account.view_account_config_settings"/>
+            <field name="model">account.config.settings</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='bank_cash']/label[last()]" position="before">
+                    <!--<label for="id" string="Cuenta de gasto - ITF"/>
+                    <div>
+                        <div name="cuenta_itf">
+                            <label for="itf_account"/>
+                            <field name="itf_account" domain="[('code', '=like', '649%')]" class="oe_inline"/>
+                        </div>
+                        <div name="porcentaje_itf">
+                            <label for="itf_porcentaje"/>
+                            <field name="itf_porcentaje" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <label for="id" string="Comisiones"/>
+                    <div>
+                        <div name="cuenta_comisiones">
+                            <label for="comisiones_account"/>
+                            <field name="comisiones_account" domain="[('code', '=like', '639%')]" class="oe_inline"/>
+                        </div>
+                        <div name="porcentaje_comisiones">
+                            <label for="comisiones_porcentaje"/>
+                            <field name="comisiones_porcentaje" class="oe_inline"/>
+                        </div>
+                    </div>-->
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

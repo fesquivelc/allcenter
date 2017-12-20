@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="project_project_form" model="ir.ui.view">
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+                    <button icon="fa-tasks" class="oe_stat_button" string="Presupuesto" name="%(action_open_project_budget)d" type="action"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

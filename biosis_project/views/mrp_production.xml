@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="mrp_production_form" model="ir.ui.view">
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="model">mrp.production</field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='origin']" position="replace">
+                        <field name="stage_id" readonly="1" string="Piso"/>
+                        <field name="tarea_id" readonly="1" string="Dpto"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

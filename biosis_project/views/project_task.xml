@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="project_task_form" model="ir.ui.view">
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+                    <button icon="fa-tasks" class="oe_stat_button" string="Crear orden de producción"
+                            name="fabricar" type="object"/>
+                </xpath>
+
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="monto_presupuestado" readonly="1"/>
+                    <field name="monto_real" readonly="1"/>
+                    <field name="presupuesto_conteo" />
+                </xpath>
+
+
+                <xpath expr="//page[@name='extra_info']" position="after">
+                    <page name="presupuesto_real" string="Presupuesto">
+                        <field name="detalle_ppto_real" nolabel="1" widget="one2many_list" mode="tree"
+                               context="{'default_tarea_id': id, 'default_stage_id': stage_id, 'default_tipo': 'real'}">
+                            <tree editable="bottom">
+                                <field name="stage_id" string="Piso" required="1"/>
+                                <field name="tarea_id" string="Departamento" required="1"/>
+                                <field name="producto_id" string="Producto" required="1"/>
+                                <field name="producto_type" invisible="1"/>
+                                <field name="ldm_id" string="LdM"/>
+                                <field name="cantidad" required="1"/>
+                                <field name="producto_precio"/>
+                                <field name="costo"/>
+                                <field name="subtotal" string="Subtotal" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

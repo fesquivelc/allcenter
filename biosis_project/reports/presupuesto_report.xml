@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="presupuesto_report_document">
+            <t t-call="report.external_layout" t-lang="es_PE">
+                <div class="page">
+                    <div class="row">
+                        <h3>Title</h3>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="presupuesto_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="biosis_project.presupuesto_report_document" />
+                </t>
+            </t>
+        </template>
+
+
+        <report
+                id="action_presupuesto_report"
+                model="biosis.project.budget"
+                string="Imprimir presupuesto"
+                report_type="qweb-pdf"
+                name="biosis_project.presupuesto_report"
+                attachment_use="False"
+                file="biosis_project.presupuesto_report"
+        />
+    </data>
+</odoo>
